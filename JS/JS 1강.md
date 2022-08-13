@@ -299,6 +299,153 @@ x['one']                   // 1   대괄호 프로퍼티 접근 연산자
 <br>
 
 #### (9) 관계 연산자
-* 키만 가지고 판단
+* 키(key)만 가지고 판단, 값(value)은 보지 X   
 
 __ex>__
+```
+10 in [10, 20, 30]   // false  /   10, 20, 30의 키(key)는 인덱스 0, 1, 2
+
+1 in 'hello'         // error
+'h' in 'hello'       // error
+
+'name' in {'name' : 'hojun', 'age' : 10}   // true → 키(key)에 name이 있기에
+```
+
+__ex>__
+```
+'length' in [10, 20, 30];    // true
+
+let x = [10, 20, 30]
+console.dir(x)
+
+// Array(3)
+0: 10
+1: 20
+2: 30
+length: 3  → 배열에 length도 포함
+```
+
+__ex>__
+```
+let x = {'one' : 1, 'two' : 2}
+console.dir(x)
+
+// object
+one: 1
+two: 2  → length가 없으므로 length in {'one' : 1, 'two' : 2}는 false   
+```
+
+<br>
+<hr>
+
+### 6) 변수   
+#### (1-1) 원시타입 (primitve)
+* 하나의 값만 가지고 있음
+   * number, string, boolean, null(아무것도 없음), undefined(아무 값도 넣지 않았을 때), symbol
+   
+   * symbol (문서 내 변경 불가능한 유일한 값)
+   
+* 고유의 값 변경 불가
+
+__ex>__
+```
+let x = 'hello'
+x[0]   // h → 호출 가능
+
+x[0] = 100
+x            // hello → 값이 바뀌지 X
+```
+<br>
+
+#### (1-2) 참조타입  (reference types)
+* object (object, array, map, set), function
+
+__ex>__: 전부 타입이 같음   
+```
+let x = [10, 20, 30]
+typeof x              // 'object'
+
+let x {'one' : 1, 'two' : 2}
+typeof x              // 'object'
+```
+<br>
+
+* 값 변경 가능
+
+__ex>__
+```
+let x = [10, 20, 30]
+x[1]                  // 20
+
+x[1] = 100
+x                     // [10, 100, 30]  →  값이 변함
+```
+<br>
+
+#### (1-3) Number (숫자)   
+* 호출: 변수명
+
+* 메서드   
+   * 10.toString은 안 됨 → 소수점이 있을 수 있기 때문에
+   
+   * (10).toString()는 가능
+   
+```
+let x = 10
+x.toString()   // 문자열 '10'
+```
+<br>
+
+* __변수명.toFixed()__   
+```
+let x = 10.3
+x.toFixed()    // '10'
+```
+<br>
+
+* __Number()__ : 문자열을 숫자로 변경
+
+   * 사용 권장하지 X
+```
+Number('10')    // 10
+```
+<br>
+
+* __parseInt()__: <안전하게> 문자열을 숫자로 변경   
+```
+parseInt('10') + parseInt('10')   // 20
+```
+<br>
+
+__ex>__
+```
+parseInt('10asdfsdfae')    // 10
+Number('10asdfsdfae')      // NaN
+```
+<br>
+
+* __NaN__   
+
+   * Not a Number: 표현할 수 없는 값
+   
+* __Infinity, -Infinity__   
+
+__ex>__   
+```
+typeof NaN       // 'number'
+typeof Infinity  // 'number'
+```
+
+* __Math__   
+
+   * Math.PI : 3.14...출력
+   
+   * Math.max() : 최댓값 출력
+   
+   * Math.min() : 최솟값 출력
+   
+__ex>__
+```
+Math.max(10, 20, 30)           // 최댓값, 30
+Math.min(10, 20, 30, 1, 2, 3)  // 최솟값, 1
+```
