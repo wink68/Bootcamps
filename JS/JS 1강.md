@@ -261,4 +261,41 @@ console.log(x)  // 5
 ```
 <br>
 
-### 6) 
+#### (6) nullish 병합 연산자   
+* (3)번 단락 회로 평가처럼 앞에 값이 __null__ 이거나 __undefined__ 면 뒤의 값을 넣어줌   
+
+__ex>__   
+```
+let result1;
+let result2 = result1 ?? 100;   // result1은 undefinded,  100을 넣어줌
+
+let result3 = 10;
+let result4 = result3 ?? 100;   // 앞의 값 10 출력
+```
+<br>
+
+#### (7) typeof 연산자   
+* 타입을 알려줌   
+
+__ex>__   
+```
+typeof 10    // 'number' 출력
+typeof '10'  // 'string' 출력
+```
+<br>
+
+#### (8) 프로퍼티 접근 연산자   
+* 여러가지 값들에 접근할 때
+
+① 마침표 프로퍼티 접근 연산자   
+② 대괄호 프로퍼티 접근 연산자   
+
+__ex>__
+```
+let x = {'one':1, 'two':2}
+x.one                      // 1   마침표 프로퍼티 접근 연산자
+x['one']                   // 1   대괄호 프로퍼티 접근 연산자
+```
+<br>
+
+#### (9) 관계 연산자
