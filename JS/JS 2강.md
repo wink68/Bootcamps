@@ -189,6 +189,42 @@ x.filter(x => x > 4)        // 5
 ```
 
 <br>
+
+* __fill__: 어떤 값을 채울 때   
+
+__ex>__   
+```
+Array(3)           // (3) [empty × 3],  빈 배열
+Array(3).fill(0)   // (3) [0, 0, 0]
+
+Array(3).fill(0).map((value, index) => value + index)     // (3) [0, 1, 2]
+Array(3).fill(0).map((value, index) => value + index +1)  // (3) [1, 2, 3]
+```
+
+<br>
 <hr>
 
+#### (6) Object (객체)
+* 형태: __```{ key : value }```__   
 
+__ex>__   
+```
+{
+    "지역이름": "전국",     // key : value(2개의 집합을 가리켜 객체 프로퍼티)
+    "확진자수": 24889,
+    "격리해제수": 23030,
+    "사망자수": 438,
+    "십만명당발생율": 48.0
+}
+```
+
+<br>
+
+* 새로운 문법: 변수명과 값을 key와 value로 쓰고 싶을 때
+
+__ex>__   
+```
+let x=1, y=2, z=3
+let object = {x, y, z}    // {x: 1, y: 2, z: 3}
+
+```
