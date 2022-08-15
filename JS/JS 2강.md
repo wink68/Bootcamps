@@ -701,3 +701,4 @@ class 고급휴먼 extends Human {     // 부모 class Human의 기능을 상속
 
 <br>
 
+### 11) 예외처리
