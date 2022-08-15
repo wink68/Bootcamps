@@ -702,3 +702,15 @@ class 고급휴먼 extends Human {     // 부모 class Human의 기능을 상속
 <br>
 
 ### 11) 예외처리
+* 기본형
+```
+try {   // 예외가 발생할 가능성이 있는 코드
+
+} catch(exception 또는 e) {   // 예외가 발생했을 때 실행할 코드
+
+} finally {   // 무조건 실행할 코드
+  
+}
+```
+<br>
+
