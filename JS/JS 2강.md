@@ -292,3 +292,30 @@ length: 4
 ```
 
 <br>
+<hr>
+
+#### (7) Map
+* 메소드:
+
+   * set : 데이터를 넣어줌   
+   * get : value를 가져오는 것
+
+```
+let map = new Map()
+map.set('one', 100)
+map.set('two', 200)
+map.set('three', 300)   // Map(4) {'one' => 100, 'two' => 200, 'three' => 300, 'four' => Array(2)}
+
+map.get('one')   // 100
+
+map.keys()       // MapIterator {'one', 'two', 'three', 'four'}
+
+map.values()     // MapIterator {100, 200, 300, Array(2)}
+
+map.entries()
+//
+0: {"one" => 100}
+1: {"two" => 200}
+2: {"three" => 300}
+3: {"four" => Array(2)}
+```
