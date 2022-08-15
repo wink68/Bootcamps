@@ -758,3 +758,7 @@ did : f1
 
 ◇ 참고 자료
 : https://youtu.be/wf6AlMj7TFA   
+
+<br>
+
+### 12) 전개구문 사용
