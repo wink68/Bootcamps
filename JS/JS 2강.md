@@ -714,3 +714,47 @@ try {   // 예외가 발생할 가능성이 있는 코드
 ```
 <br>
 
+__ex>__   
+```
+function f2() {
+  console.log('f2 시작');
+  throw '에러';
+  console.log('f2 종료');     // 에러가 발생할 수 있는 지역
+}
+
+function f1() {
+  console.log('f1 시작');
+  try {                      // 에러가 발생할 수 있는 곳을 예외처리
+    f2();
+  } catch (e) {              // 에러가 발생했을 때 표시할 내용
+    console.log(e);
+  }
+  console.log('f1 종료');    // 에러를 예외처리 했기에 실행 가능
+}
+
+console.log('will: f1');
+f1();
+console.log('did : f1);
+```
+
+__예시 결과__   
+```
+// 에러가 없는 결과
+will : f1
+f1 시작
+f2 시작
+f2 종료     // 에러가 발생할 수 있는 곳
+f1 종료
+did : f1
+
+// 예외 처리 결과
+will : f1
+f1 시작
+f2 시작
+에러
+f1 종료
+did : f1
+```
+
+◇ 참고 자료
+: https://youtu.be/wf6AlMj7TFA   
