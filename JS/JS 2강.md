@@ -618,3 +618,86 @@ let f = (a, b) => {         // 값이 여러개일 때, 파라미터에 ()를, �
     return result
 };
 ```
+
+<br>
+
+### 10) 클래스   
+* __클래스 (class)__ - 붕어빵 찍는 틀 = 공장   
+
+__ex>__   
+```
+class Notice {   // 클래스
+    constructor(title, contents, author){   // constructor는 고정
+        this.title = title
+        this.contents = contents
+        this.author = author
+    }
+    수정하기(title, contents, author){
+        this.title = title
+        this.contents = contents
+        this.author = author
+    }
+}
+```
+
+<br>
+
+* __인스턴스 (instance)__ - 붕어빵 = 제품   
+
+__ex>__   
+```
+dataBase = []
+게시물1 = new Notice('제목1', '내용1', '저자1')
+dataBase.push(게시물1)
+게시물2 = new Notice('제목2', '내용2', '저자2')
+dataBase.push(게시물2)
+게시물3 = new Notice('제목3', '내용3', '저자3')
+dataBase.push(게시물3)
+```
+
+<br>
+
+#### (1) 쉬운 예시   
+* 함수나 Object가 아닌 클래스를 쓰는 이유 → 계속 찍어낼 수 있기에   
+
+__ex>__   
+```
+// 클래스
+class Human {
+    attack() {
+        console.log('공격!')
+    }
+    defense() {
+        console.log('방어!')
+    }
+}
+```
+```
+// 인스턴스
+hojun = new Human()
+hojun.attack()      // 공격!
+
+길동 = new Human()
+길동.defense()      // 방어!
+```
+
+<br>
+
+#### (2) 상속
+* 부모 class의 기능 자식 class에 가져다 쓸 수 있다
+
+__ex>__
+```
+class 고급휴먼 extends Human {     // 부모 class Human의 기능을 상속
+    마법() {
+        console.log('파이어볼!');
+    }
+}
+
+춘향 = new 고급휴먼()
+춘향.마법()            // 파이어볼!  →  자식 class의 기능
+춘향.attack()          // 공격!      →  부모 class의 기능 상속
+```
+
+<br>
+
