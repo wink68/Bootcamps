@@ -204,7 +204,7 @@ Array(3).fill(0).map((value, index) => value + index +1)  // (3) [1, 2, 3]
 <br>
 <hr>
 
-#### (6) Object (객체)
+#### (6-1) Object (객체)
 * 형태: __```{ key : value }```__   
 
 __ex>__   
@@ -228,3 +228,67 @@ let x=1, y=2, z=3
 let object = {x, y, z}    // {x: 1, y: 2, z: 3}
 
 ```
+
+<br>
+
+* 호출 방법: __변수명, 변수명.지역이름, 변수명['지역 이름']__   
+
+__ex>__   
+```
+let x=1, y=2, z=3
+let object = {x, y, z}
+
+object       // {x: 1, y: 2, z: 3}
+object.x     // 1
+object['x']  // 1
+```
+
+<br>
+
+* 수정: value['hello'] = 'world', value['hello' = null   
+   
+* 삭제: dele value['hello'] 는 추천하지 않음
+   * 메모리 상에 'world'가 남아 있음   
+   
+   * value['hello'] = null   
+
+__ex>__: 수정   
+```
+let x=1, y=2, z=3
+let object = {x, y, z}
+
+object['hello'] = 'world'
+object                   // {x: 1, y: 2, z: 3, hello: 'world'}
+```
+
+<br>
+
+#### (6-2) Object 메소드   
+* Object.keys(변수명)   
+
+__ex>__   
+```
+Object.keys(object)  //  ['x', 'y', 'z', 'hello']
+```
+
+* Object.values(변수명)
+
+__ex>__   
+```
+Object.values(object)  // [1, 2, 3, 'world']
+```
+
+* Object.entries(변수명)   
+
+__ex>__   
+```
+Object.entries(object)
+
+0: (2) ['x', 1]
+1: (2) ['y', 2]
+2: (2) ['z', 3]
+3: (2) ['hello', 'world']
+length: 4
+```
+
+<br>
