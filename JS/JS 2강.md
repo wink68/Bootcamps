@@ -499,8 +499,37 @@ for (let i = 0; i < 10; i++) {
 <br>
 
 ### 9) 함수
-* 함수 표현식과 함수 선언식   
+#### (1-1) 함수 표현식과 함수 선언식   
 ```
 let 함수표현식 = function(){}   // 호이스팅 X
-function 함수선언식(){}         // 호이스팅 O
+                               // 정확히는 호이스팅은 일어나지만, "일시적 사각지대(TDZ, Temporal Dead Zone)"에 빠져 error가 난다
+
+
+function 함수선언식(){}        // 호이스팅 O, 함수 선언 되기 앞에도 출력하고자 하는 argument식을 넣을 수 있음
+```
+
+<br>
+
+#### (1-2) parameter(파라미터), argument(인자)   
+* 매개변수 (파라미터, parameter): x, y   
+* 전달인자 (argument): 3, 5
+
+__ex>__: 함수 선언식   
+```
+function add(x, y){  // parameter (파라미터)
+    return x + y;
+}
+
+add(3, 5)            // argument (인자)
+```
+
+__ex>__: 함수 표현식   
+```
+add(3, 5)                   // argument (인자), 호이스팅 O
+
+let add = function(x, y){   // parameter (파라미터)
+    return x + y;
+}
+
+add(3, 5)                   // argument (인자)
 ```
