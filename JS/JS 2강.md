@@ -294,11 +294,13 @@ length: 4
 <br>
 <hr>
 
-#### (7) Map
+#### (7-1) Map
 * 메소드:
 
-   * set : 데이터를 넣어줌   
-   * get : value를 가져오는 것
+   * set() : 데이터를 넣어줌   
+   * get() : value를 가져오는 것
+   * keys() : key값만 불러오기
+   * values() : value값만 불러오기
 
 ```
 let map = new Map()
@@ -319,3 +321,40 @@ map.entries()
 2: {"three" => 300}
 3: {"four" => Array(2)}
 ```
+
+<br>
+
+#### (7-2) object를 map 자료형으로 변환   
+__ex>__   
+```
+let x=1, y=2, z=3
+let object = {x, y, z}    // {x: 1, y: 2, z: 3}
+
+let test = new Map(Object.entries(object))
+test                      // Map(3) {'x' => 1, 'y' => 2, 'z' => 3}
+```
+
+<br>
+<hr>
+
+#### (8) Set (object)   
+* 중복을 허용하지 X
+
+* 메소드: ``` add, delete, has, size ```   
+
+__ex>__   
+```
+let x = new Set('11111222223333')
+set     // Set(3) {'1', '2', '3'}
+```
+
+__ex>__: ``` add, size ```   
+```
+x.add(4);    // Set(4) {'1', '2', '3', 4}
+x.size       // 4
+```
+
+<br>
+<hr>
+
+### 7) 조건문   
