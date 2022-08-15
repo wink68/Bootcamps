@@ -405,4 +405,92 @@ console.log(day)  // 일
 ```
 
 <br>
+<hr>
+
+### 8) 반복문   
+#### (1) for문   
+```
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+```
+
+<br>
+
+#### (2) for of문   
+__ex1>__   
+```
+let a = [10, 20, 30];   // let a = 'hello',  let a = '19821'도 가능
+
+for (let i of a) {
+    console.log(i);
+}
+
+// 출력
+10
+20
+30
+```
+
+__ex2>__   
+```
+let sum = 0
+let a = '19821'
+for (let i of a) {
+    sum += parseInt(i)  // 21
+}
+```
+
+__ex3>__
+```
+let a = {'one':1, 'two':2};
+for (let i in a) {
+    console.log(i);        // one two, key값 출력
+    console.log(a[i]);     // 1 2, value값 출력
+}
+```
+<br>
+
+#### (3-1) while문   
+```
+let x = 0;
+while (x < 10) {
+    console.log(x);  // 0부터 9까지 출력
+    x++;
+}
+```
+
+#### (3-2) 무한 반복
+* ``` for (;;) {} ```   
+
+* ``` while (true) {} ```   
+
+<br>
+
+#### (3-3) do-while문
+* while문은 조건이 false면 실행되지 않지만, do-while문은 false라도 최소 1번은 실행된다
+
+__ex>__
+```
+let x = 10;
+do {
+    console.log(x);
+    x++;
+} while (x < 10)    // 10
+```
+
+<br>
+
+#### (4) break / continue   
+* ```break``` : 반복문이 만족했을 때, 반복문을 탈출   
+
+* ```continue``` : 반복문이 만족했을 때, 다음 루프로 넘어감   
+
+__ex>__   
+```
+for (let i = 0; i < 10; i++) {
+    if (i == 5) continue;      // 1~4, 6~9 출력
+    console.log(i);
+}
+```
 
