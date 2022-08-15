@@ -497,6 +497,7 @@ for (let i = 0; i < 10; i++) {
 ```
 
 <br>
+<hr>
 
 ### 9) 함수
 #### (1-1) 함수 표현식과 함수 선언식   
@@ -523,6 +524,8 @@ function add(x, y){  // parameter (파라미터)
 add(3, 5)            // argument (인자)
 ```
 
+<br>
+
 __ex>__: 함수 표현식   
 ```
 add(3, 5)                   // argument (인자), 호이스팅 O
@@ -532,4 +535,86 @@ let add = function(x, y){   // parameter (파라미터)
 }
 
 add(3, 5)                   // argument (인자)
+```
+
+<br>
+
+__ex>__: 파라미터 디폴트값   
+```
+function add(a = 100, b = 200) {  // 디폴트 값
+    console.log(a, b);
+    return a + b;
+}
+
+add();                // add에 인자를 넣어주지 않으면, 300이 출력됨
+add(10);              // 10만 넣어주면 210 출력
+add(b=300)            // 500,  a에 입력
+add(undefined, 300);  // 400
+
+add(10, 20);  // 30 출력
+```
+
+<br>
+
+#### (2-1) 콜백함수   
+* 함수를 선언하고, 나중에 실행   
+
+__ex>__   
+```
+function add(x, y) {   // add 함수
+    return x + y;
+}
+
+function mul(x, y) {   // mul 함수
+    return x * y;
+}
+
+function cal(a, b){
+    return a(10, 10) + b(10, 10);
+}
+
+cal(add, mul);         // 함수를 변수처럼 사용
+```
+
+<br>
+
+#### (2-2) 화살표 함수로 콜백함수 선언   
+* 장점: argument에 들어갈 따로 함수 naming을 안해줘도 됨   
+* 단점: 콜백지옥에 빠질 수 있음 → 들여쓰기 많아짐   
+
+__ex>__
+```
+function cal(a, b){
+    return a(10, 10) + b(10, 10);
+}
+
+cal((a, b) => a + b, (a, b) => a * b);  // cal함수 안의 argument 자리에 화살표 함수 넣어줌
+```
+
+<br>
+
+#### (2-3) 화살표 함수
+```
+function A(x) {
+    return x**2
+}
+
+// 함수표현식, 호이스팅 X
+let A = x => { x**2 };
+```
+
+__ex>__
+```
+function f(a, b) {
+    let z = 10
+    let result = z + a + b
+    return result
+}
+
+// 함수표현식, 호이스팅 X
+let f = (a, b) => {         // 값이 여러개일 때, 파라미터에 ()를, 리턴값이 {}로 감싸줌
+    let z = 10
+    let result = z + a + b
+    return result
+};
 ```
