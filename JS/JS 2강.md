@@ -817,14 +817,58 @@ var str = "a";                // 문자열 선언
 var pattern new RegExp('a');  // 정규표현식 객체 생성
 ```
 
-
 ◇ 참고 자료   
 : https://youtu.be/yZ0gW_VslE8   
 
 <br>
+
+#### (3) 필요한 정보 추출: ``` RegExp.exec() ``` → 배열로 리턴   
+__ex>__   
+```
+var pattern = /a/;
+
+pattern.exec('abcde');   // 검색하고자 하는 내용
+["a"]                    // 찾은 결과
+```
+
+__ex>__   
+```
+var pattern = /a./;      // dot는 어떤 문자든 문자의 자리
+
+pattern.exec('abcde');   // 찾고자 하는 내용
+["ab"]                   // 찾은 결과
+
+
+var pattern = /a/;
+
+pattern.exec('bcdef');   // 찾고자 하는 내용
+null                     // 값이 없음
+```
+
 <br>
 
-__ex>__: 0 문자 제거   
+#### (4) 필요한 정보 유무 파악: ``` RegExp.test() ```
+__ex>__
+```
+var pattern = /a/;
+
+pattern.test('abcde');
+true                    // a가 있으므로 true
 ```
 
+◇ 참고 자료   
+: https://youtu.be/siP__-Xb-jc
+
+<br>
+
+#### (5) 멋사 예시   
+__ex>__: 0 문자 제거   
 ```
+let s = '010100020201020304812123';
+s.replace(/[^1-9]/g,"")              // [] 안에 있는 ^는 not → 0
+'11221234812123'
+```
+
+<br>
+
+### 14) 리터럴   
