@@ -917,4 +917,40 @@ for (let [[i, j], k] of [[[1, 2], 2], [[1, 2], 4]]) {
 ### 16) 동기와 비동기   
 * JS는 일을 처리할 수 있는 threa가 1개 = __싱글쓰레드__   
 
-* 
+* 여려명이서 일을 못 처리할 경우, 항상 기다려야 하거나 무한대기에 빠질 수 있음
+
+* __★ 자바스크립트 실행동작 원리 검색해보기 ★__   
+
+__ex>__   
+```
+// 순서대로 한다면 덧셈, 곱셈, hello world 순이지만
+// 비동기이기 때문에 hello world, 곱셈, 덧셈 순이 됨
+
+function 덧셈(a, b, 콜백함수) {
+    setTimeout(()=>{
+        let result = a + b
+        console.log(result)
+    }, 2000)
+}
+function 곱셈(a, b, 콜백함수) {
+    setTimeout(()=>{
+        let result = a * b
+        console.log(result)
+    }, 1000)
+}
+
+덧셈(20, 30)
+곱셈(2, 6)
+console.log('hello world')       // setTimeout의 실행 시간이 2000이 아니라 0이라도 'hello world'를 먼저 출력하고 50, 12를출력함
+```
+
+<br>
+<hr>
+
+### (1) Promise ★매우 중요★   
+<br>
+
+### (2) fetch ★매우 중요★
+<br>
+
+### 17) DOM   
