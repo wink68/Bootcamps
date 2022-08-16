@@ -985,6 +985,22 @@ const f = fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinatio
 
 <br>
 
+__ex>__: 비동기 처리   
+```
+// async : 함수는 동기적으로 처리 되면 안 되기에 async
+// await : 데이터를 다 가지고 올때까지 기다리겠다는 것
+// 아래 await : 위의 response 값을 언제 받을지 모르기에 기다림
+
+async function getUserEmail(id){
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    const user = await(response.json());
+    const email = user.email;
+    console.log(email)
+}
+```
+
+<br>
+
 ### (2) fetch ★매우 중요★
 <br>
 
