@@ -945,9 +945,44 @@ console.log('hello world')       // setTimeout의 실행 시간이 2000이 아�
 ```
 
 <br>
-<hr>
 
 ### (1) Promise ★매우 중요★   
+* pending (대기상태) - resolve (해결) - fulfilled (성공)   
+
+* pending (대기상태) - reject (거부) - rejected (실패)   
+
+* 기본 형식   
+```
+new Promise((resolve, reject) => {
+        //code
+    })
+    .then(result => result)     // resolve가 되면 then으로 넘어감
+    .then(result => result)
+    .catch(err => err)          // reject가 되면 catch로 넘어감
+    .finally(result => result)
+```
+
+__ex>__   
+* 코로나 백신현황처럼 변하는 데이터(동적)를 반영해주기 위해
+* html과 css는 정적이기에 변경된 데이터가 반영 안 되기에
+
+```
+const f = fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json')
+f
+
+//Promise {<fulfilled>: Response}
+
+const f = fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json')
+    .then(function(response) {
+        return response.json();    // 성공한 데이터 response를 json으로 만들어 줌
+
+    })
+    .then(function(json) {         // json을 입력해
+        console.log(json);         // json을 출력
+        return json
+    })
+```
+
 <br>
 
 ### (2) fetch ★매우 중요★
