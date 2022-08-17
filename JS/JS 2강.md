@@ -19,7 +19,7 @@ let name = 'hojun'
 console.log('제 이름은 ' + name + '입니다.)
 
 - 탬플릿 리터럴
-console.log('제 이름은 ${name}입니다.)
+console.log(`제 이름은 ${name}입니다.`)
 
 - 결과
 제 이름은 hojun입니다.
