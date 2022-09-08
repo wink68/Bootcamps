@@ -1,5 +1,6 @@
 ## Ⅰ. 자바스크립트 1강 (Javascript)   
 ## 1. 강의 자료
+* 과제: https://likelion.notion.site/3-2-4bde1cae99554e9c99326db1404b8f1e   
 * 자료: https://www.notion.so/JS-22-6-8723b46e0cde4d90b020b689e5cb9f0a#6d71826efcd24cbfbecd00ea8092f8ee
 * 영상: https://youtu.be/NQZZyVM8ksw
 
