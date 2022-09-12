@@ -328,3 +328,102 @@ __ex>__
 선택자 { 속성 : 속성값; }
 ```
 
+<br>
+
+__ex>__
+```
+h1 {
+  font-size: 20px;           // 폰트 사이즈
+  font-family: sans-serif;   // 글꼴
+  color: blue;               // 폰트 색깔
+  background-color: yellow;  // 배경색
+  text-align: center;        // 텍스트 정렬
+}
+```
+
+<br>
+
+#### (3) 적용 방법
+#### ① Inline Style Sheet
+* 태그 안에 직접 style 적용
+
+__ex>__
+```
+<h1 style="color: red;"> coding 101 </h1>
+```
+
+#### ② Internal Style Sheet
+* <style> 태그 안에 넣기
+
+__ex>__
+```
+<head>
+<style>
+    h1 { background-color: yellow; }
+</style>
+</head>
+```
+
+#### ③ External Style Sheet
+* <link> 태그로 불러오기   
+
+* html, css 각각의 문서 안에서 따로 관리
+
+   * 가독성이 높고 유지보수가 쉬움
+
+__ex>__
+```
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+```
+
+<br>
+<hr>
+
+### 6) CSS 선택자
+#### (1) 선택자 (Selector) 종류 
+* __head 안의 style 안에 작성__   
+<br>
+
+#### ① Type(타입) 선택자
+* HTML 태그   
+
+__ex>__
+```
+// h2 = 타입 선택자
+
+<style>
+   h2 { color: red; }
+</style>
+```
+
+#### ② Class(클래스) 선택자
+* 태그에 대한 별명   
+
+   * 콤마(.)Class명   
+
+__ex>__
+```
+// <h2 class="coding"> 내용 </h2>
+
+<style>
+   .coding { color: red; }
+</style>
+```
+
+#### ③ ID(아이디)
+* 태그의 이름
+
+   * 샵(#)ID명   
+   
+   * ID는 클래스보다 더 큰 공간을 의미 = __아이디가 클래스보다 CSS 선택자 우선순위가 높다__   
+
+__ex>__
+```
+// <h2 id="coding"> 내용 </h2>
+
+<style>
+   #coding { color: green; }
+</style>
+```
