@@ -87,3 +87,83 @@ article {
 <br>
 <hr>
 
+### 4) 레이아웃에 영향을 미치는 속성
+### ① display
+* Block과 Inline 요소의 성격을 바꿀 때 사용
+
+   * inline-block을 사용하면 두 요소의 성격을 모두 가짐
+
+__ex>__
+```
+// css 문서
+p { display: inline; }
+a { display: block; }
+a { display: inline-block; }
+```
+
+<br>
+
+### ② float
+* object를 왼쪽/오른쪽에서부터 정렬하고자 할 때
+
+__ex>__
+```
+<div class = "left">Hello World</div>
+<div class = "right">Hello World</div>
+
+// css문서
+.left { float: left; }
+.right { float: right; }
+```
+
+### ③ clear
+* float의 단점: 뒤에 생성된 레이아웃을 밑에 겹치게 배치
+
+   * clear로 float을 꺼줌
+
+* float에 대한 속성을 제어하고자 할 때
+  
+   * float값이 마지막으로 사용한 다음 태그에 clear 적용
+
+   * left, right, both
+
+__ex>__
+```
+<header></header>
+  <aside class="left">Hello World</aside>
+  <main></main>
+  <aside class="right">Hello World</aside>
+  <footer></footer>
+
+// css 문서
+footer { clear: both; }
+```
+
+<br>
+
+### ④ 공백 제거
+* 공백이 생기는 이유
+
+   * html과 body 태그가 태생적으로 margin값과 padding값을 가지므로 초기화 필요
+
+   * 별(*)로 초기화
+<br>
+
+__ex>__: 방법1
+```
+<style>
+   html, body {
+      margin: 0;
+      padding: 0;
+   }
+</style>
+```
+__ex>__: 방법2 (모든 html 태그)
+```
+<style>
+   * {
+      margin: 0;
+      padding: 0;
+   }
+</style>
+```
