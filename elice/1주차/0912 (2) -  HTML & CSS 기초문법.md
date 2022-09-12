@@ -44,3 +44,42 @@ __ex>__
    * ```<a>, <span>```
   
    * margin-top, margin-bottom 적용 불가
+
+<br>
+<hr>
+
+### 3-1) 마진 병합 현상 (형제지간)
+* 두 마진이 겹치는 현상
+
+* 큰 값과 작은 값 중 큰 값으로 사용   
+
+__ex>__
+```
+<div class="box1">Hello World</div>
+<div class="box2">Hello World</div>
+
+/ css문서
+.box1 { margin-bottom: 150px; }  // 150px 적용
+.box2 { margin-top: 100px; }
+```
+
+<br>
+
+### 3-2) 마진 병합 현상 (부모 자식간)
+* 자식 <article>에 마진을 주면, 부모인 <main>에도 영향을 미침   
+
+__ex>__
+```
+<main rol="main">
+   <article>
+   </article>
+</main>
+
+
+// css 문서
+article {
+   width: 200px;
+   height: 200px;
+   margin-top: 100px;
+}
+```
