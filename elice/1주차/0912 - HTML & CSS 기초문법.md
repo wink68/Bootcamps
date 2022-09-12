@@ -591,7 +591,3 @@ __ex>__
   background: yello url(이미지 경로) no-repeat left;
 }
 ```
-
-<br>
-<hr>
-
