@@ -28,4 +28,19 @@ __ex>__
 ```
 
 <br>
+<hr>
 
+### 2) Block 요소와 Inline 요소
+* Block 요소
+
+   * weight, height 가능
+
+   * ```<header>, <div>, <h>, <p>```   
+
+* Inline 요소
+
+   * weight, height 불가능
+
+   * ```<a>, <span>```
+  
+   * margin-top, margin-bottom 적용 불가
