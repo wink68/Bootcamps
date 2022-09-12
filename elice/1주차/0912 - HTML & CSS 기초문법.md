@@ -436,6 +436,29 @@ __ex>__
   
    * ```<header>와 <h1><p>```
   
+   * 부모의 css속성을 상속받을 수 있다
+  
+   * 자식 속성이 우선
+  
 * 형제 관계
   
    * ```<h1>과 <p>```
+
+__ex1>__
+```
+header { color: red; }
+h1 { color: blue; }      // 자식 속성이 우선이여서 부모 red속성을 상속받지 X
+p { color: green; }
+```
+  
+__ex2>__
+```
+header { color: red; }
+header h1 { color: blue; }    // 어느 부모인지 정하면 그 부모의 자식에게만 적용
+header p { color: green; }
+```
+
+<br>
+<hr>
+
+### 8) 캐스케이딩
