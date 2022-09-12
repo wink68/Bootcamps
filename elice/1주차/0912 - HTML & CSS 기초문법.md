@@ -462,3 +462,136 @@ header p { color: green; }
 <hr>
 
 ### 8) 캐스케이딩
+#### (1) 의미
+* CSS의 우선순위   
+
+* 우선순위를 결정하는 요소
+
+   * 순서, 디테일, 선택자
+   
+
+#### ① 순서
+* 나중에 적용한 속성값 우선
+
+__ex>__
+```
+p { color: red; }
+p { color: blue; }
+```
+
+#### ② 디테일
+* 더 구체적으로 작성된 선택자 우선
+
+__ex>__: 부모 명시
+```
+header p { color: red; }
+p { color: blue; }
+```
+
+#### ③ 선택자
+* style > id > class > type 순   
+
+__ex>__
+```
+// 1등(핑크)
+<h3 style="color: pink" id="color" class="color"> color </h3>
+
+// css 문서
+#color { color: blue; }  2등
+.color { color: red; }   3등
+h3 { color: green; }     4등
+```
+
+<br>
+<hr>
+
+### 9) CSS 주요 속성
+#### (1) width, height
+* __width_: 넓이 설정   
+
+* __height__: 높이 설정
+
+__ex>__
+```
+<p class = "paragraph"> 프로그래밍을 배워봐요! </p>
+.paragraph { width: 500px; height: 500px; }
+```
+
+<br>
+
+#### (2) font
+* __font-family__
+
+   * 여러 폰트를 순서대로 작성 가능
+   
+   * sans-serif : 모든 브라우저에서 지원하기에 마지막 디폴트값
+
+* __font-weight__
+
+   * 100 ~ 900 사이 숫자, 100 단위
+
+```
+.paragraph {
+  font-size: 50px;                  // 글자 크기
+  font-family: Arial, sans-serif;   // 글꼴
+  font-style: italic;               // 글자 기울기
+  font-weight: bold;                // 글자 굵기
+}
+```
+
+<br>
+
+#### (3) border (테두리)
+* __border-style__   
+
+   * __solid__: 실선
+   
+   * __dotted__: 점선
+
+* 띄어쓰기로 한 줄 작성 가능
+
+```
+.paragraph {
+  border-style: solid;
+  border-width: 10px    // 테두리 굵기
+  border-color: red;
+}
+```
+```
+.paragraph {
+  border: solid 10px red;
+}
+```
+
+<br>
+
+#### (4) background (특정 영역 배경)
+* __background-repeat__
+
+   * x축으로 반복: repeat-x
+   * y축으로 반복: repeat-y
+   * 반복하지 않음: no-repeat
+
+* __background-position__   
+
+   * 이미지 위치
+   * top, bottom, center, left, right
+
+* 띄어쓰기로 한 줄 작성 가능
+```
+.paragraph {
+  background-color: yellow;
+  background-image: url(이미지 경로.확장명);
+  background-repeat: no-repeat
+  background-position: left;
+}
+```
+```
+.paragraph {
+  background: yello url(이미지 경로) no-repeat left;
+}
+```
+
+<br>
+<hr>
+
