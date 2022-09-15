@@ -161,7 +161,8 @@ __ex>__
 
 <br>
 
-__ex>__: float이 적용되지 않은 검정색이 float가 적용된 빨강, 초록, 핑크 뒤로 가게 된다
+__ex>__   
+* float이 적용되지 않은 검정색이 float가 적용된 빨강, 초록, 핑크 뒤로 가게 된다
 <img src="https://user-images.githubusercontent.com/108077414/190482092-c4d3f0b8-e734-420c-90c2-cff9589c1bb8.jpg" width="80%" alt="float example">
 
 <br>
@@ -175,7 +176,7 @@ __ex>__: float이 적용되지 않은 검정색이 float가 적용된 빨강, �
   
    * float값이 마지막으로 사용한 다음 태그에 clear 적용
 
-   * left, right, both
+   * ```left, right, both```   
 
 __ex>__
 ```
@@ -188,6 +189,12 @@ __ex>__
 // css 문서
 footer { clear: both; }
 ```
+  
+<br>
+  
+__ex>__   
+*
+<img src="https://user-images.githubusercontent.com/108077414/190483335-497efb15-143d-48db-9dc5-b3630aa08ac9.jpg" width="80%" alt="clear example">
 
 <br>
 
