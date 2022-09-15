@@ -193,7 +193,7 @@ footer { clear: both; }
 <br>
   
 __ex>__   
-*
+* clear가 적용되어 float가 꺼진 검정(footer)은 아래쪽에 쌓이게 된다  
 <img src="https://user-images.githubusercontent.com/108077414/190483335-497efb15-143d-48db-9dc5-b3630aa08ac9.jpg" width="80%" alt="clear example">
 
 <br>
