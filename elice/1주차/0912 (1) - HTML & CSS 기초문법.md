@@ -87,7 +87,9 @@
 #### ① ```<img> 태그```   
 * 기본형
 ```
-<img src="이미지 파일 경로" alt="출력하지 못했을 경우 텍스트 내용">
+<body>
+   <img src="이미지 파일 경로" alt="출력하지 못했을 경우 텍스트 내용">
+</body>
 ```
 
 * 닫힌 태그 X   
@@ -154,13 +156,15 @@ __ex>__
 
 __ex1>__
 ```
-<a href="https://academy.elice.io/" target="_blank">엘리스</a>
-<img src="elice_logo.png" alt="엘리스 회사 로고" width="200px">
+<body>
+   <a href="https://academy.elice.io/" target="_blank">엘리스</a>    /* 글자 "엘리스"에 링크 걸기 */
+   <img src="elice_logo.png" alt="엘리스 회사 로고" width="200px">    /* 이미지 생성 */
+</body>
 ```
 
 <br>
 
-__ex2>__: 이미지를 눌렀을 때, 링크로 이동   
+__ex2>__: 이미지에 링크 걸기   
 ```
   <a href="https://academy.elice.io/" target="_blank">
       <img src="elice_logo.png" alt="엘리스 회사 로고">
@@ -206,7 +210,7 @@ __ex4>__: 리스트 (링크)
 #### (1: 목차) __```<header>```__ , __```<nav>```__ 태그   
 * __```<header>```__: 웹사이트의 머리글을 담는 공간   
 
-* __```<nav>```__: 메뉴버튼을 담는 공간   
+* __```<nav>```__: 메뉴버튼을 담는 공간 (navigation)   
 
    * ```<ul>, <li>, <a>```와 함께 사용   
    
@@ -307,7 +311,7 @@ __ex>__
 <hr>
 
 ### 5) CSS 주요 속성 살펴보기   
-#### (1) CSS란?
+### (1) CSS란?
 * Cascading Style Sheet   
 
 * 정보(HTML)와 디자인(CSS)의 분리   
@@ -316,7 +320,7 @@ __ex>__
 
 <br>
 
-#### (2) CSS 구성 요소
+### (2) CSS 구성 요소
 * 구성요소
    * 선택자: 디자인을 적용할 HTML 영역
 
@@ -344,14 +348,19 @@ h1 {
 
 <br>
 
-#### (3) 적용 방법
+### (3) ★ 적용 방법 ★
 #### ① Inline Style Sheet
 * 태그 안에 직접 style 적용
+
+* 기본형: __```<태그 style="속성: 속성값;"></태그>```__
+<br>
 
 __ex>__
 ```
 <h1 style="color: red;"> coding 101 </h1>
 ```
+
+<br>
 
 #### ② Internal Style Sheet
 * <style> 태그 안에 넣기
@@ -365,8 +374,15 @@ __ex>__
 </head>
 ```
 
+<br>
+
 #### ③ External Style Sheet
-* <link> 태그로 불러오기   
+* 기본형   
+
+   * __```<link rel="css파일의 성격" href="css파일">```__
+
+   * rel 속성 (css파일의 성격) : http://tcpschool.com/html-tag-attrs/link-rel   
+<br>
 
 * html, css 각각의 문서 안에서 따로 관리
 
@@ -382,9 +398,11 @@ __ex>__
 <br>
 <hr>
 
-### 6) CSS 선택자
+### 6) ★ CSS 선택자 ★
 #### (1) 선택자 (Selector) 종류 
-* __head 안의 style 안에 작성__   
+* head 안의 style 안에 작성   
+
+* 우선순위: 
 <br>
 
 #### ① Type(타입) 선택자
