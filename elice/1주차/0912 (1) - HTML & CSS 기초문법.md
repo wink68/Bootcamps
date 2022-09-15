@@ -598,16 +598,17 @@ __ex>__
 #### (4) background (특정 영역 배경)
 * __```background-repeat```__
 
-   * x축으로 반복: repeat-x
-   * y축으로 반복: repeat-y
-   * 반복하지 않음: no-repeat
+   * x축으로 반복: ```repeat-x```
+   * y축으로 반복: ```repeat-y```
+   * 반복하지 않음: ```no-repeat```
 
-* __background-position__   
+* __```background-position```__   
 
    * 이미지 위치
-   * top, bottom, center, left, right
+   * ```top, bottom, center, left, right```
 
-* 띄어쓰기로 한 줄 작성 가능
+* ★ 띄어쓰기로 한 줄 작성 가능 ★
+   
 ```
 .paragraph {
   background-color: yellow;
