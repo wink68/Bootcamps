@@ -602,17 +602,22 @@ __ex>__
    * y축으로 반복: ```repeat-y```
    * 반복하지 않음: ```no-repeat```
 
-* __```background-position```__   
+<br>
 
-   * 이미지 위치
+* __```background-position```__: 이미지 위치   
+
    * ```top, bottom, center, left, right```
+
+   * ex> 오른쪽 위 : ```right top```
+
+<br>
 
 * ★ 띄어쓰기로 한 줄 작성 가능 ★
    
 ```
 .paragraph {
   background-color: yellow;
-  background-image: url(이미지 경로.확장명);
+  background-image: url(이미지 경로.확장명);   /* no-repeat를 쓰지 않으면 배경에 이미지로 꽉 채워짐 */
   background-repeat: no-repeat
   background-position: left;
 }
