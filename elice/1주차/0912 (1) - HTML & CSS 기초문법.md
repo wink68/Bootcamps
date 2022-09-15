@@ -50,6 +50,13 @@
 
 <br>
 
+#### (1-3) ★ 개발자 도구 (F12, Ctrl+Shift+C) ★
+* Elements - <body>의 코드 클릭 - Styles에서 체크박스를 조정해 속성 체크 가능   
+
+<br>
+<br>
+<hr>
+
 #### (2) HTML 5 기본 구조
 ```
 <!DOCTYPE html>
@@ -402,7 +409,6 @@ __ex>__
 #### (1) 선택자 (Selector) 종류 
 * head 안의 style 안에 작성   
 
-* 우선순위: 
 <br>
 
 #### ① Type(타입) 선택자
@@ -465,16 +471,20 @@ __ex>__
 
 __ex1>__
 ```
-header { color: red; }
-h1 { color: blue; }      // 자식 속성이 우선이여서 부모 red속성을 상속받지 X
-p { color: green; }
+<style>
+   header { color: red; }
+   h1 { color: blue; }      // 자식 속성이 우선이여서 부모 red속성을 상속받지 X
+   p { color: green; }
+</style>
 ```
   
 __ex2>__
 ```
-header { color: red; }
-header h1 { color: blue; }    // 어느 부모인지 정하면 그 부모의 자식에게만 적용
-header p { color: green; }
+<style>
+   header { color: red; }
+   header h1 { color: blue; }    // 어느 부모인지 정하면 그 부모의 자식에게만 적용
+   header p { color: green; }
+</style>
 ```
 
 <br>
@@ -507,7 +517,7 @@ header p { color: red; }
 p { color: blue; }
 ```
 
-#### ③ 선택자
+#### ★ ③ 선택자 ★
 * style > id > class > type 순   
 
 __ex>__
@@ -526,66 +536,67 @@ h3 { color: green; }     4등
 
 ### 9) CSS 주요 속성
 #### (1) width, height
-* __width_: 넓이 설정   
+* __```width```__: 넓이 설정   
 
-* __height__: 높이 설정
+* __```height```__: 높이 설정
 
 __ex>__
 ```
 <p class = "paragraph"> 프로그래밍을 배워봐요! </p>
+
 .paragraph { width: 500px; height: 500px; }
 ```
 
 <br>
 
 #### (2) font
-* __font-family__
+* __```font-family```__
 
    * 여러 폰트를 순서대로 작성 가능
    
-   * sans-serif : 모든 브라우저에서 지원하기에 마지막 디폴트값
+   * __```sans-serif```__ : 모든 브라우저에서 지원하기에 마지막 디폴트값
 
-* __font-weight__
+* __```font-weight```__
 
    * 100 ~ 900 사이 숫자, 100 단위
 
 ```
 .paragraph {
-  font-size: 50px;                  // 글자 크기
-  font-family: Arial, sans-serif;   // 글꼴
-  font-style: italic;               // 글자 기울기
-  font-weight: bold;                // 글자 굵기
+   font-size: 50px;                  // 글자 크기
+   font-family: Arial, sans-serif;   // 글꼴
+   font-style: italic;               // 글자 기울기
+   font-weight: bold;                // 글자 굵기
 }
 ```
 
 <br>
 
 #### (3) border (테두리)
-* __border-style__   
+* __```border-style```__   
 
-   * __solid__: 실선
+   * __```solid```__: 실선
    
-   * __dotted__: 점선
+   * __```dotted```__: 점선
 
-* 띄어쓰기로 한 줄 작성 가능
+* ★ 띄어쓰기로 한 줄 작성 가능 ★
 
 ```
 .paragraph {
-  border-style: solid;
-  border-width: 10px    // 테두리 굵기
-  border-color: red;
+   border-style: solid;
+   border-width: 10px    // 테두리 굵기
+   border-color: red;
 }
 ```
 ```
 .paragraph {
-  border: solid 10px red;
+   border: solid 10px red;
 }
 ```
 
 <br>
 
 #### (4) background (특정 영역 배경)
-* __background-repeat__
+* __```background-repeat```__
 
    * x축으로 반복: repeat-x
    * y축으로 반복: repeat-y
