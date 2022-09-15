@@ -35,22 +35,59 @@
 
    * Hyper Text Markup Language   
 
+      * Hyper Text = 'Text를 뛰어넘는다' = 순차적 접근을 뛰어넘는다 (다른 페이지로 쉽게 이동, 링크 or 북마크)   
+
+      <br>
+
    * 웹 사이트에서 눈에 보이는 정보나 특정 구역을 설정할 때 사용하는 언어   
 
 <br>
 
 * 구성 요소   
-```<열린태그 속성 = "속성값"> 컨텐츠 </단힌태그>```
+```<태그 속성 = "속성값"> 내용 </태그>```
 <br>
 
-#### (1-2) HTML 주석
+#### (1-2) Markup
+* HTML의 M   
+
+* 문서를 구조적으로 표시하기 위한 것   
+
+<br>
+
+#### (1-3) HTML 주석
 ```
 <!-- 내용 -- >
 ```
 
 <br>
 
-#### (1-3) ★ 개발자 도구 (F12, Ctrl+Shift+C) ★
+#### (1-4) Self-Closing Tag
+* 종료 태그가 없는 태그   
+
+* 기본형
+
+   * <태그 속성 = "속성값" />
+   
+   * ★ __```엔딩 슬래시```__ 로 종료를 나타냄 (선택 사항) ★   
+
+<br>
+
+__ex>__
+```
+   <img />  <meta />  <link />  <br />  <col />  <hr />
+```
+
+<br>
+<br>
+
+#### (1-5) 코딩 컨벤션 (Coding Convention)   
+* 코드 규칙
+
+   * 단축이 가능한 코드를 한 줄에 쓸 것인가, 선택 사항을 넣을 것인가 등
+
+<br>
+
+#### (1-6) ★ 개발자 도구 (F12, Ctrl+Shift+C) ★
 * Elements - <body>의 코드 클릭 - Styles에서 체크박스를 조정해 속성 체크 가능   
 
 <br>
@@ -63,14 +100,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>TEST</title>
+        <title> 문서 제목 </title>
     </head>
 
     <body>
-        <h1 style="color:navy">안녕 엘리스!</h1>
+        <h1 style="color:navy"> 문서 내용 </h1>
     </body>
 </html>
 ```
+  
 * __head__ : head는 요약 정보 (노출 X)   
 
    * __"UTF-8"__: 모든 문자코드를 (깨짐없이) 잘 출력하도록 하기 위해   
@@ -129,9 +167,9 @@ __ex>__
 <br>
 
 #### ④ ```<ul> 태그```   
-* 순서가 없는 리스트 (unordered list)   
+* 순서가 없는 리스트 (unordered list) <=> __```<ol> 태그```__      
 
-* 메뉴 버튼   
+* 메뉴 버튼: __```<li>```__   
 
 __ex>__
 ```
@@ -146,9 +184,13 @@ __ex>__
 #### ⑤ ```<a> 태그```
 * 링크 형성   
 
+   * 웹페이지나 사이트에 연결하는 태그
+
 * 기본형   
 ```
 <a href="링크" target="웹페이지를 연결하는 방식">링크 텍스트</a>
+  
+// href (hypertext reference) : 텍스트나 이미지를 링크에 연결
 ```
 
 * __```_self```__: 새 탭에서 생성   
@@ -203,6 +245,74 @@ __ex4>__: 리스트 (링크)
       <a href="#">메뉴2</a>
    </li>
 </ul>
+```
+
+<br>
+<hr>
+
+#### ⑥ ```<br> 태그```   
+* 줄바꿈(엔터) 태그
+
+   * Break(쪼개다)의 약자
+
+__ex>__
+```
+  <p>
+      내용 <br>
+      내용
+  </p>
+  <span>내용<br>내용</span>
+```
+
+<br>
+
+#### ⑦ ```<form> 태그```
+* form 생성 태그
+
+   * 로그인, 회원가입 등에 사용
+
+   * input, button 태그를 사용
+
+__ex>__
+```
+  <form action="/examples/media/action_target.php">
+     이름 : <input type="text" name="st_name"><br>
+     학번 : <input type="text" name="st_id"><br>
+     학과 : <input type="text" name="department"><br>
+     <input type="submit">
+  </form>
+```
+
+<br>
+
+#### ⑧ ```<iframe> 태그```
+* 외부 페이지 삽입 태그
+
+__ex>__
+```
+  <iframe src="https://academy.elice.io/explore" width="300" height="300"></iframe>
+```
+
+<br>
+
+#### ⑨ ```<strong> 태그```
+* 중요한 내용 강조 태그
+
+__ex>__
+```
+  <p><strong>주의!</strong> 이번 역은 승강장 사이와의 간격이 넓으니 주의하시기 바랍니다!</p>
+```
+
+<br>
+
+#### ⑩ ```<i> 태그```   
+* Italic의 약자
+  
+* 기울임 태그
+  
+__ex>__
+```
+  <p><i>타이타닉호</i></p>
 ```
 
 <br>
@@ -273,7 +383,27 @@ __ex>__
 <br>
 
 #### (4) __```<div>```__ 태그   
-* 임의의 공간을 만들 때   
+* 임의의 공간(레이아웃)을 만들 때   
+  
+* Block 태그
+
+   * 가로 한 줄 전체 영역을 사용함   
+
+* Division(분할)의 약자
+
+<br>
+
+#### (5) __```<span>```__ 태그   
+* Inline 태그
+
+   * 세로가 아닌, 가로로 쌓임
+
+__ex>__
+```
+   <span>hello1</span>
+   <span>hello2</span>
+   <span>hello3</span>      // hello1 hello2 hello3
+```
 
 <br>
 <hr>
@@ -284,7 +414,7 @@ __ex>__
 #### ① Block 요소
 * y축 정렬 형태로 출력 (줄바꿈 현상)
 
-   * ```<h>, <p>, <div>, <header>``` 등
+   * ```<h>, <p>, <div>, <header>, <ul>, <ol>, <form>, <table>, <fieldset>, <address>, <blockquote>``` 등
 
 * width, height 공간 크기 설정 가능   
 
@@ -387,6 +517,9 @@ __ex>__
 * 기본형   
 
    * __```<link rel="css파일의 성격" href="css파일">```__
+
+      * ```<link rel="stylesheet" href="파일명.css" />```   
+      <br>
 
    * rel 속성 (css파일의 성격) : http://tcpschool.com/html-tag-attrs/link-rel   
 <br>
