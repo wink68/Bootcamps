@@ -606,7 +606,7 @@ __ex>__
 
 * __```background-position```__: 이미지 위치   
 
-   * ```top, bottom, center, left, right```
+   * ```top, bottom, center, left, right, px, %```
 
    * ex> 오른쪽 위 : ```right top```
 
