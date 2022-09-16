@@ -180,6 +180,7 @@ __ex>__
 ```
 
 <br>
+<hr>
 
 #### ⑤ ```<a> 태그```
 * 링크 형성   
@@ -245,6 +246,49 @@ __ex4>__: 리스트 (링크)
       <a href="#">메뉴2</a>
    </li>
 </ul>
+```
+
+<br>
+<br>
+
+#### ◆ 하이퍼링크 CSS
+* __```a:link```__
+
+   * 방문한 적 없는 기본 링크
+
+* __```a:visited```__
+
+   * 방문한 링크
+
+* __```a:hover```__
+
+   * 마우스를 가져다뒀을 때
+
+* __```a:active```__
+
+   * 링크를 클릭했을 때
+
+__CSS >__
+```
+a:link {
+   color: red;
+   text-decoration: none;
+}
+
+a:visited {
+   color: blue;
+   text-decoration: none;
+}
+
+a:hovor {
+   color: hotpink;
+   text-decoration: underline;
+}
+
+a:active {
+   background-color: blue;
+   text-decoration: underline;
+}
 ```
 
 <br>
@@ -865,6 +909,18 @@ __ex>__
 <br>
 
 #### (4) background (특정 영역 배경)
+* __```background-color```__
+
+   * 배경색 지정
+
+<br>
+
+* __```background-image```__
+
+   * 배경 이미지 지정, 상대경로, 절대경로, url 사용 가능   
+
+<br>
+
 * __```background-repeat```__
 
    * x축으로 반복: ```repeat-x```
@@ -881,8 +937,7 @@ __ex>__
 
 <br>
 
-* ★ 띄어쓰기로 한 줄 작성 가능 ★
-   
+__ex>__
 ```
 .paragraph {
   background-color: yellow;
@@ -891,6 +946,9 @@ __ex>__
   background-position: left;
 }
 ```
+<br>
+
+* ★ 띄어쓰기로 한 줄 작성 가능 ★
 ```
 .paragraph {
   background: yello url(이미지 경로) no-repeat left;
