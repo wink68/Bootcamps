@@ -103,6 +103,9 @@ Commiter
 ## 3) Git 관리 상태 확인
 ### (1) 변경사항 비교
 * 명령어 __```git diff```__
+
+   * commit된 파일 중 변경된 사항을 비교
+   
 ```
   $ git diff
   
@@ -117,7 +120,7 @@ Commiter
 
    * ```-p, --patch```
 
-      * commit의 수정 결과를 비교해주는 diff와 같은 역할
+      * 각 commit의 수정 결과를 비교해주는 diff와 같은 역할
 
    * ```-n```
    
@@ -125,6 +128,35 @@ Commiter
 
 <br>
 
-* 명령어 __```git clog --stat```__
+* 명령어 __```git log --stat```__
 
    * ```--stat```
+
+      * 어떤 파일이 commit에서 수정되고 변경되었는지, 파일 내 라인이 추가되거나 삭제되었는지 확인
+
+<br>
+
+* 명령어 __```git log --pretty=oneline```__
+
+   * ```--pretty=oneline```
+
+      * 각 commit을 한 줄로 출력
+
+<br>
+
+* 명령어 __★ ```git log --graph``` ★__
+
+   * ```--graph```
+
+      * commit간의 연결된 관계를 아스키 그래프로 출력
+
+      * branch에서 유용하게 쓰임
+
+<br>
+
+* 명령어 __```git log --S 특정 텍스트```__
+
+   * ```--S```
+
+      * 추가되거나 제거된 내용 중 특정 텍스트가 포함되어 있는지 검사
+
