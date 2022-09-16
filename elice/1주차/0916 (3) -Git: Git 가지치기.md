@@ -69,12 +69,85 @@ __ex>__
 <br>
 <hr>
 
-## 2) fast forward
+## 2-1) fast forward 병합 방식
+* ```git checkout like_feature```로 branch위치 이동
+
+   * like_feature에 새로운 정보를 넣어 commit
+
+   * like_feature에서 새로운 checkpoint를 만듦
+
+* ```merge``` → __새로운 내용만 master에 병합되는 방식__   
+
+   * ```branch → master로 병합```
+
+<br>
+
+<img src="https://user-images.githubusercontent.com/108077414/190641998-fa920d07-f73c-4cf1-96a8-9fd7b4e43ed9.jpg" alt="branch" width="500" />
+
+<br>
+
+## 2-2) 갈라지는 branch
+### (1) commit graph 확인
+* 명령어 __```git log --graph --all```__
+
+   * commit graph 확인 가능
+
+<br>
+
+### (2) 병합merge
+```
+  $ git checkout master
+  switched to branch 'master'
+  
+  $ git merge like_feature
+  [main 2019-07-31T08:58:15.648Z] update#setState idle
+  Merge made by the 'recursive' strategy
+    checkout.text | 2 +-
+    1 file changed, 1 insertion(+), 1 deletion(-)
+```
+<br>
+
+<img src="https://user-images.githubusercontent.com/108077414/190641536-66aa0cbc-cae6-4fc3-beda-e257553541e6.jpg" alt="branch" width="500" />
 
 <br>
 <hr>
 
 ## 3) Merge
+### (1) 병합
+* 명령어 __```git merge 통합할 브랜치```__
+
+   * ```master``` Branch로 통합   
+
+```
+  $ git checkout masster
+  $ git merge like_feature  // master로 통합
+```
+
+<br>
+
+* 명령어 __```git branch --merged```__
+
+   * merge된 branch를 볼 수 있음
+
+__ex>__
+```
+  $ git branch --merged
+    like_feature
+  * master
+```
+
+<br>
+
+### (2) branch 삭제
+* 명령어 __```git branch -d 브랜치 이름```__
+
+   * 사용을 마친 branch 삭제
+
+```
+  $ git branch -d like_feature
+  
+  $ git log --graph --pretty=oneline --all
+```
 
 <br>
 <hr>
