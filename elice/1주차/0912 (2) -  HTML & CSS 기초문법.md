@@ -3,6 +3,10 @@
 * 콘텐츠 영역 < 패딩(padding) < 박스 테두리(border) < 마진(margin)
 <br>
 
+<img src="https://user-images.githubusercontent.com/108077414/190561983-5197a52c-fd41-456e-9709-1df7f1fc790f.png" alt="박스 모델" width="400" />
+
+<br>
+
 #### (1) margin과 padding의 차이
 * __margin-left__
 
