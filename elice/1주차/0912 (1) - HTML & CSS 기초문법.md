@@ -486,8 +486,12 @@ h1 {
 <br>
 
 ### (3) ★ 적용 방법 ★
-#### ① Inline Style Sheet
-* 태그 안에 직접 style 적용
+* 적용 우선순위 : __```인라인 > 내부 > 외부```__
+
+<br>
+
+#### ① Inline Style Sheet (인라인)   
+* 태그 안에 직접 style 적용   
 
 * 기본형: __```<태그 style="속성: 속성값;"></태그>```__
 <br>
@@ -499,8 +503,8 @@ __ex>__
 
 <br>
 
-#### ② Internal Style Sheet
-* <style> 태그 안에 넣기
+#### ② Internal Style Sheet (내부)   
+* <head>의 <style> 태그 안에 넣기
 
 __ex>__
 ```
@@ -513,7 +517,7 @@ __ex>__
 
 <br>
 
-#### ③ External Style Sheet
+#### ③ External Style Sheet (외부)   
 * 기본형   
 
    * __```<link rel="css파일의 성격" href="css파일">```__
@@ -556,6 +560,9 @@ __ex>__
 </style>
 ```
 
+<br>
+<br>
+
 #### ② Class(클래스) 선택자
 * 태그에 대한 별명   
 
@@ -569,6 +576,9 @@ __ex>__
    .coding { color: red; }
 </style>
 ```
+
+<br>
+<br>
 
 #### ③ ID(아이디)
 * 태그의 이름
@@ -584,6 +594,31 @@ __ex>__
 <style>
    #coding { color: green; }
 </style>
+```
+
+<br>
+<br>
+
+#### ④ 속성 선택자 (Attribute Selectors)
+* __```[속성이름 = "속성값"]```__   
+
+* 해당 속성의 속성값까지 일치하는 모든 요소에 적용   
+
+__ex>__
+```
+  a[title] {
+     color: purple;
+  }
+  
+  a[href="https://swtrack.elice.io/"] {
+     color: green;
+  }
+  
+  [title="first h2"] {
+     background: black;
+     color: yellow;
+  }
+
 ```
 
 <br>
@@ -605,7 +640,37 @@ __ex>__
 
 <br>
 
-#### (2) 별 표시 태그 (*)   
+#### (2) 테그 사이 스페이스바( )   
+* A태그 안에 있는 모든 B태그 선택   
+
+__ex>__
+```
+
+
+
+```
+
+<br>
+
+#### (3) 태그와 클래스 결합
+* 점(.)으로 태그와 클라스 연결   
+
+__ex>__
+```
+   h1.header { color: blue; }
+   h2.header { color: green; }
+```
+
+<br>
+
+#### (4) 복합 선택자 조합   
+
+
+
+
+<br>
+
+#### (4) 별 표시 태그 (*)   
 * 모든 태그에 적용하고자 할 때   
    
 __ex>__   
