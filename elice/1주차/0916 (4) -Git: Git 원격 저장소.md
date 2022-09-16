@@ -103,6 +103,31 @@
 
 <br>
 
+#### (2) 저장소 갱신 - Fetch
+* __```git log```__ 명령어로 변경된 파일을 확인하고 Merge 해줘야 함   
+
+   * commit 메시지로 업데이트 된 부분을 확인할 수 있음
+
+__ex>__
+```
+  $ git log origin/master
+  
+     Update README.md    // commit 메시지
+```
+
+<br>
+
+#### (3) 저장소 발행 - Push
+* 로컬 저장소에서 작업한 내용 → 원격 저장소 보내기
+
+   * 다른 사람이 먼저 push한 상태에서 push 불가능
+
+   * 다른 사람이 작업한 것을 먼저 merge 해줘야 함
+
+```
+  $ git push origin master
+```
+
 <br>
 <hr>
 
