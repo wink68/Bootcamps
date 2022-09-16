@@ -36,21 +36,21 @@
 
 <br>
 
-#### (2-2) 원격저장소를 로컬 저장소와 연결
+#### (3-1) 원격저장소를 로컬 저장소와 연결
+* origin이 기본값 (default)   
+
 ```
-  $ git remote add origin 주소
+  $ git remote add origin(저장이름) 주소
 ```
 
-<br>
-
-#### (3) 저장소 주소
+__ex>__
 ```
   $ git remote add origin https://gitlab.com/group/project     ( 웹호스트 서비스 / 그룹명 / 프로젝트명 )
 ```
 
 <br>
 
-#### (4-1) 원격 저장소 확인
+#### (3-2) 원격 저장소 확인
 * 명령어 __```git remote```__
 
 ```
@@ -60,12 +60,25 @@
 
 <br>
 
-#### (4-2) 원격 저장소 한번에 살펴보기
+#### (3-3) 원격 저장소의 이름과 주소 살펴보기
+* 명령어 __```git remote -v```__   
+
+__ex>__
+```
+  $ git remote -v
+  
+  origin https://gitlab.com/group/project (fetch)
+  origin https://gitlab.com/group/project (push)
+```
+
+<br>
+
+#### (3-4) 원격 저장소 한번에 살펴보기
 * 명령어 __```git remote show origin```__
 
 <br>
 
-#### (5) 원격 저장소 이름 변경
+#### (4) 원격 저장소 이름 변경
 * 명령어 __```git remote rename 원래이름 새로운 이름```__
 
 ```
@@ -74,7 +87,7 @@
 
 <br>
 
-#### (6) 원격 저장소 삭제
+#### (5) 원격 저장소 삭제
 * 명령어 __```git remote rm 저장소 이름```__
 
 ```
@@ -132,3 +145,4 @@ __ex>__
 <hr>
 
 ### 3) Origin이란?
+* 원격 저장소에 저장되는 기본 이름
