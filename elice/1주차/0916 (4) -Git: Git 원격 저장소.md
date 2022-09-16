@@ -55,6 +55,24 @@
 * 명령어 __```git remote show origin```__
 
 <br>
+
+### (5) 원격 저장소 이름 변경
+* 명령어 __```git remote rename 원래이름 새로운 이름```__
+
+```
+  $ git remote rename origin git_test
+```
+
+<br>
+
+### (6) 원격 저장소 삭제
+* 명령어 __```git remote rm 저장소 이름```__
+
+```
+  $ git remote rm git_test
+```
+
+<br>
 <hr>
 
 ### 2) 원격 저장소 동기화
