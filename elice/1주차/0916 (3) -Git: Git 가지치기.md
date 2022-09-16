@@ -153,3 +153,24 @@ __ex>__
 <hr>
 
 ## 4) conflict 해결
+### (1) Merge 충돌 해결
+* Merge한 두 브랜치에서 __같은 파일을 변경했을 때__ 충돌이 발생   
+
+```
+  // 두 브랜치를 각각 다르게 수정한 상황
+  $ git merge like_feature
+  
+  Auto-merging comment.js
+  CONFLICT (content) : Merge conflict in comment.js
+  Automatic merge failed; fix conflicts and then commit the result.
+```
+<br>
+
+* __```git status```__ 명령어로 어느 파일에서 충돌이 발생했는지 확인
+
+* 수정 완료 후 __```git add```__ , __```git commit```__ 과정을 거쳐 다시 merge 해준다
+
+<br>
+
+### (2) Merge 충돌 방지
+* __```master```__ branch의 변화를 지속적으로 가져와서 충돌이 발생하는 부분을 제거   
