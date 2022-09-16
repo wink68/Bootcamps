@@ -21,7 +21,7 @@
 
 <br>
 
-### (2) url로 받아오기
+### (2-1) url로 받아오기
 * 원격 저장소에서 __```clone```__ 버튼을 클릭   
 
 * SSH와 HTTPS 중 __```Clone with HTTPS```__ 옵션으로 clone   
@@ -34,7 +34,9 @@
    $ git clone https://gitlab.com/alwys/myproject.git
  ```
 
-* 아래의 명령어로 원격저장소 연결
+<br>
+
+### (2-2) 원격저장소 연결
 ```
   $ git remote add origin 주소
 ```
