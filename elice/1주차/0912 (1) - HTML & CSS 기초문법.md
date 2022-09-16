@@ -640,19 +640,7 @@ __ex>__
 
 <br>
 
-#### (2) 테그 사이 스페이스바( )   
-* A태그 안에 있는 모든 B태그 선택   
-
-__ex>__
-```
-
-
-
-```
-
-<br>
-
-#### (3) 태그와 클래스 결합
+#### (2) 태그와 클래스 결합
 * 점(.)으로 태그와 클라스 연결   
 
 __ex>__
@@ -663,11 +651,50 @@ __ex>__
 
 <br>
 
-#### (4) 복합 선택자 조합   
+#### (3) 복합 선택자 조합   
+* 자식 선택자 (>)
 
+   * ```nav > ul```   
 
+* 후손 선택자 (공백)
 
+   * ```nav li```
 
+* 일반 형제 선택자
+
+   * ```li ~ li```   
+
+* 인접 형제 선택자
+
+   * ```.li1 + .li2```   
+
+__HTML >__
+```
+<nav>
+  <ul>
+     <li class="li1">홈</li>
+     <li class="li2">로그인</li>
+     <li class="li3">회원가입</li>
+     <li class="li4">게시판</li>
+     <li class="li5">질의응답</li>
+  </ul>
+  </nav>
+```
+   
+__CSS >__
+```
+.li1 { color : red; }
+
+ul li { color : green; }         /* 부모 자식 관계 */
+ul > .li4 { color : orange; }    /* 직속 부모 자식 관계 */
+
+.li1 + .li2 { color : yellow; }  /* 인접 형제 관계 */
+.li1 ~ .li5 { color : blue; }    /* 일반 형제 관계 */
+```
+
+<img src="https://user-images.githubusercontent.com/108077414/190550268-9c5196b4-0737-4131-bd62-42316d3a6200.jpg" alt="복합 선택자 조합" width="300px" />
+
+<br>
 <br>
 
 #### (4) 별 표시 태그 (*)   
@@ -760,6 +787,10 @@ __ex>__
 .color { color: red; }   3등
 h3 { color: green; }     4등
 ```
+<br>
+
+◆ 선택자 우선순위 점수 매기기   
+* https://iridescent-zeal.tistory.com/90
 
 <br>
 <hr>
@@ -786,9 +817,17 @@ __ex>__
    
    * __```sans-serif```__ : 모든 브라우저에서 지원하기에 마지막 디폴트값
 
+* __```font-style```__
+
+   * 폰트 스타일: ```normal / italic(이텔릭체) / oblique(기울임꼴)```   
+
 * __```font-weight```__
 
    * 100 ~ 900 사이 숫자, 100 단위
+
+* __```text-align```__
+
+   * 폰트 정렬 (left / right / center / justify)   
 
 ```
 .paragraph {
@@ -857,3 +896,22 @@ __ex>__
   background: yello url(이미지 경로) no-repeat left;
 }
 ```
+
+<br>
+<hr>
+
+### 10) 사이즈 (size) 단위   
+| 단위 | 설명 | 예시 |
+| -- | -- | -- |
+| px | 픽셀 (절대 크기) |  |
+| % | 퍼센트 (상대 크기) |  |
+| em | 현재 스타일이 지정된 요소의 font-size 기준 | 1.2em : 현재 폰트의 1.2배 |
+| rem (root em) | 최상위 최상위 요소의 font-size 기준 | 1.2rem : 최상위 폰트의 1.2배 |
+| vh (vertical height) | 뷰포트 높이값의 100분의 1 단위 | 1vh = 9px, 브라우저 높이값이 900px일 때 |
+| vw (vertical width) | 뷰포트 넓이값의 100분의 1 단위 | 1vw = 9px, 브라우저 넓이값이 900px일 때 |
+| vmin (vertical min) | 뷰포트의 최소값 | 1vmin = 7px, 브라우저 크기: 넓이 1100px, 높이 700px일 때 |
+| vmax (vertical max) | 뷰포트의 최대값 | 1vmax = 11px, 브라우저 크기: 넓이 1100px, 높이 700px일 때 |
+
+
+
+
