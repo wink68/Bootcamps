@@ -14,13 +14,13 @@
 
 <br>
 
-### (2) 준비 영역으로 보내기
+### (2-1) 준비 영역으로 보내기
 * 명령어 __```git add 파일명```__
 
    * staging area로 이동
 
 ```
-  $ git add comment.js
+  $ git add comment.js README.py
 ```
 
 * 여러 파일을 보내야 할 때: 현재 폴더의 모든 파일 보내기
@@ -30,8 +30,17 @@
 
 <br>
 
+### (2-2) 준비 영역 reset
+* 명령어 __```git reset```__
+
+   * staging area를 reset 해준다
+
+   * staging area가 비워진다
+
+<br>
+
 ### (3) Staging 상태 확인
-* 명령어 __```git status```__
+* 명령어 __```git status 파일명.확장자```__
 
    * staging area의 파일의 상태 (변경 사항)를 확인
 
@@ -53,6 +62,8 @@
 * 명령어 __```git commit```__
 
    * staging area의 모든 파일을 .git 저장소에 저장
+
+   * unmodified 상태가 됨
 
 * __```-m "메시지"```__
 
