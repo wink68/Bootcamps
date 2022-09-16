@@ -7,30 +7,50 @@
 
 <br>
 
-#### (1) margin과 padding의 차이
-* __margin-left__
+#### (1) margin과 padding 작성법
+* __★ ```top right bottom left 순``` ★__   
 
-   * border 바깥쪽에서 왼쪽에 여백을 만듦   
+   * 12시 시계방향
+
+__ex>__
+```
+<style>
+  div {
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  padding-left: 100px;
+  }
+</style>
+```
+
+__ex>__: 한 줄로 쓰기
+```
+<style>
+   div { margin: 100px 0 0 100px; }
+</style>
+```
+
+<br>
+
+#### (2) margin과 padding의 차이
+#### ① padding
+* background-color 속성의 영향을 받음
 
 * __padding-left__
 
    * border 안쪽에서 왼쪽에 여백을 만듦
    
    * 여백이 공간 크기에 포함됨
-   
+
 <br>
 
-#### (2) margin과 padding 작성법
-* __★ ```top right bottom left 순``` ★__   
+#### ② margin   
+* background-color 속성의 영향을 받지 X
 
-   * 12시 시계방향
-   
-__ex>__
-```
-<style>
-   div { margin: 100px 0 0 100px; }
-</style>
-```
+* __margin-left__
+
+   * border 바깥쪽에서 왼쪽에 여백을 만듦   
 
 <br>
 <hr>
@@ -228,3 +248,17 @@ __ex>__: 방법2 (모든 html 태그)
    }
 </style>
 ```
+
+<br>
+<hr>
+
+### 4) 참고 사이트
+* W3Schools.come CSS 강좌: https://www.w3schools.com/css/default.asp
+
+* Mozilla CSS 개발 문서: https://developer.mozilla.org/ko/docs/Web/CSS
+
+* Can I use: https://caniuse.com
+
+* Google HTML/CS Style Guide: https://google.github.io/styleguide/htmlcssguide.html
+
+* Skill roadmap: https://roadmap.sh
