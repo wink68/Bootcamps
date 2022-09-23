@@ -88,7 +88,7 @@ __ex>__
 <br>
 
 #### (1-6) ★ 개발자 도구 (F12, Ctrl+Shift+C) ★
-* Elements - <body>의 코드 클릭 - Styles에서 체크박스를 조정해 속성 체크 가능   
+* Elements - ```<body>```의 코드 클릭 - Styles에서 체크박스를 조정해 속성 체크 가능   
 
 <br>
 <br>
@@ -548,7 +548,7 @@ __ex>__
 <br>
 
 #### ② Internal Style Sheet (내부)   
-* <head>의 <style> 태그 안에 넣기
+* ```<head>```의 ```<style>``` 태그 안에 넣기
 
 __ex>__
 ```
@@ -920,6 +920,20 @@ __ex>__
    border: solid 10px red;
 }
 ```
+#### (3-1) border-radius (모서리)
+* 모서리를 얼마나 둥글게 만들지
+<br>
+
+__속성값 >__   
+| 단위 | 설명 |
+| -- | -- |
+| 크기 | 반지름 크기를 px, em 단위로 표시 |
+| 백분율 | 현재 요소 크기를 기준으로 반지름 크기를 %로 지정 |
+<br>
+
+<img src="https://user-images.githubusercontent.com/108077414/191967799-b9d90e03-2b0c-4995-9751-0ef582b3b7c7.jpg" alt="border-radius" width="400px" />
+
+<br>
 
 <br>
 
