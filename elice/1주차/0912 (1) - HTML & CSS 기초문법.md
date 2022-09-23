@@ -868,6 +868,7 @@ __ex>__
 ```
 
 <br>
+<br>
 
 #### (2) font
 * __```font-family```__
@@ -897,6 +898,7 @@ __ex>__
 }
 ```
 
+<br>
 <br>
 
 #### (3) border (테두리)
@@ -936,8 +938,41 @@ __속성값 >__
 <br>
 
 ★ 참고자료   
-: https://blog.naver.com/3pmarketer/222846760728   
+* https://blog.naver.com/3pmarketer/222846760728   
 
+* 비율로 모서리 조절 예시   
+: https://blog.naver.com/earnestga/222832707207   
+
+<br>
+
+#### (3-2) outline (바깥 테두리, 외곽선)   
+* __```outline-style```__   
+
+   * 아웃라인 형식
+
+* __```outline-color```__
+
+   * 아웃라인 색상
+
+* __```outline-width```__
+
+   * 아웃라인 두께
+
+* __```outline-offset```__
+
+   * outline의 간격
+
+__Ex>__
+```
+
+```
+
+<br>
+
+★ 참고자료   
+* https://blog.naver.com/earnestga/222832707207   
+
+<br>
 <br>
 
 #### (4) background (특정 영역 배경)
