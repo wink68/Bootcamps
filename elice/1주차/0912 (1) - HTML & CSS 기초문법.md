@@ -964,12 +964,32 @@ __속성값 >__
 
 __Ex>__
 ```
+div {      
+      margin: 30px;
+      padding: 100px;
+      width: 600px;
+      background: rgba(210 210 210);
 
+      border: none;
+      border-radius: 50px;
+      outline: 1px dashed black;
+      outline-offset: 15px;
+    }
+    p {
+      font-weight: bold;
+      font-size: 50px;
+      color: black;
+      text-align: center;
+    }
 ```
+
+<img src="" alt="outline" width="600px" />
 
 <br>
 
 ★ 참고자료   
+* https://blog.naver.com/nsoft21/222618902305   
+
 * https://blog.naver.com/earnestga/222832707207   
 
 <br>
