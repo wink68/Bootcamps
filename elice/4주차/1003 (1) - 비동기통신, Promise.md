@@ -118,4 +118,90 @@ setTimeout(function callback() {
 console.log('Finished')             // 2. Finished 출력
 ```
 
-<img src="https://user-images.githubusercontent.com/108077414/193473329-20e66afc-d010-40eb-aca2-f46007d19d45.png" alt="동기적 제어 흐름" width="800px" />
+<img src="https://user-images.githubusercontent.com/108077414/193473329-20e66afc-d010-40eb-aca2-f46007d19d45.png" alt="비동기적 제어 흐름" width="800px" />
+
+
+<br>
+<hr>
+
+### 2) 이벤트 루프
+### (1-1) 자바스크립트의 비동기
+* 자바스크립트 엔진
+
+   * 비동기 처리를 제공하지 않는다
+
+   * 대신, 비동기 코드는 정해진 함수를 제공하여 활용할 수 있다 → __이 함수들을 API라 한다__   
+
+* 비동기 API의 예시
+
+   * ```setTimeout```, ```XMLHttpRequest```, ```fetch``` 등의 Web API가 있다
+
+* Node.js의 경우 파일처리 API, 암호화 API 등을 제공한다
+
+<br>
+
+### (1-2) 비동기 코드 예시
+* 타이머 비동기 처리
+```
+setTimeout(() => console.log('타이머 끝'), 1000)       // 특정 시간이 되었을 때 1번 실행
+setInterval(() => console.log('인터벌 타이머'), 1000)  // 특정 시간마다 실행
+```
+
+* 네트워크 처리
+```
+fetch('https://google.com')                            // 구글로 요청을 보내서 응답을 받을 수 있음
+    .then(() => console.log('네트워크 요청 성공.'))
+    .catch(() => console.log('네트워크 요청 실패.'))
+```
+
+<br>
+<hr>
+
+### (2) 비동기 처리 모델
+* __자바스크립트 엔진__
+
+   * 메인 스레드로 구성되어 있다
+
+   * 메인 스레드는 __Call stack__ 를 이용해 코드를 읽고 실행함
+
+      * 함수 안에 함수가 있는 경우, 실행 컨텍스트에 func1(), func2()가 쌓이게 됨 (execution context stack)
+<br>
+
+* __비동기 환경__
+
+   * API 모듈은 비동기 요청을 처리한 후, __Taskque__ 에 callback 함수를 넣는다
+
+      * setTimeout()의 경우, Web API 모듈에 등록되었을 때, 특정 시간 후 Task queue에 들어간다
+
+   * __Job queue__ 는 Promise API나 animation frame에서 사용된다
+<br>
+
+* __이벤트 루프(Event Loop)__
+
+   * 비동기 코드가 끝나고 call stack이 다 비워졌을 때, Task queue의 첫번째 callback 함수를 Call stack에 집어넣고 코드를 실행한다
+
+<br>
+
+<img src="https://user-images.githubusercontent.com/108077414/193474517-97bf6001-bfd4-445d-8261-28c4b800036a.png" alt="비동기 처리 모델" width="800px" />
+
+<br>
+
+### (2-1) 비동기 처리 예시
+* console.log를 만난다
+
+* request 함수는 userData에 콜백 함수를 받는다
+
+   * request 함수는 비동기 처리를 끝냈을 때, 콜백 함수를 Task queue에 넣어준다
+
+   * Task queue에서 request가 끝나면 Call stack에 request callback 함수를 넣어주고, console.log가 찍히고 끝난다
+
+__Ex>__
+```
+request("user-data", (userData) => {
+    console.log("userData 로드")
+    saveUsers(userData)
+});
+
+console.log("DOM 변경")
+console.log("유저 입력")
+```
