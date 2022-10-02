@@ -213,3 +213,8 @@ request("user-data", (userData) => {
 console.log("DOM 변경")
 console.log("유저 입력")
 ```
+
+<br>
+<hr>
+
+### (3) 실습: 동기 비동기 타이머 구현하기
