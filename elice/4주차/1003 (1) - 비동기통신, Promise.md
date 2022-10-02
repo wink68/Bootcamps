@@ -178,7 +178,15 @@ fetch('https://google.com')                            // 구글로 요청을 �
 
 * __이벤트 루프(Event Loop)__
 
+   * 자바스크립트 엔진 외부에 존재한다
+
+      * node.js 환경의 경우, libuv라는 모듈에서 비동기 처리를 담당한다
+
    * 비동기 코드가 끝나고 call stack이 다 비워졌을 때, Task queue의 첫번째 callback 함수를 Call stack에 집어넣고 코드를 실행한다
+
+      * Task queue에 callback 함수가 들어온 순서대로 함수를 Call stack으로 내보낸다
+
+      * 단, queue는 여러 개가 존재하며, 그 중 우선순위가 높은 큐(잡 큐 등)에서 나중에 들어온 콜백 함수가 실행될 수 있다
 
 <br>
 
