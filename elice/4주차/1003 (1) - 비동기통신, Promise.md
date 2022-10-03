@@ -252,6 +252,8 @@ Promise.resolve().then(() => console.log("프로미스 2"));
 
       * ```new Promise()```나 ```fetch()``` 비동기 API를 통해 ```Pending(진행)``` 상태에 접어들게 되고, 성공/실패 상태(```settled```)를 알 수 있다
 
+         * 비동기 처리 중에 pending 상태를 표현할 수 있다
+
       * 성공은 ```fullfilled```나 ```resolved```, 실패는 ```rejected```로 표현된다
 
          * 성공의 경우에는 ```.then()``` 메소드가 실행되고, 실패의 경우에는 ```.catch()``` 메소드가 실행된다
@@ -381,8 +383,3 @@ Promise.all([
         console.log("하나라도 실패: ", e)
     })
 ```
-
-<br>
-<hr>
-
-### 4) 
