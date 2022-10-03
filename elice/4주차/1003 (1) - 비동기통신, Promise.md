@@ -217,4 +217,172 @@ console.log("유저 입력")
 <br>
 <hr>
 
-### (3) 실습: 동기 비동기 타이머 구현하기
+### 3) Promise
+### (1-1) Promise API
+* 비동기 API 주 하나
+
+* 테스크 큐(Task queue)가 아닌 잡큐(Job queue, 혹은 microtask queue)를 사용한다
+
+   * 잡큐는 테스크 큐보다 우선순위가 높다
+
+__Ex >__
+```
+③ 3번째 실행
+setTimeout(() => {
+    console.log("타임아웃 1");
+}, 0);
+
+① 1번째 실행
+Promise.resolve().then(() => console.log("프로미스 1"));
+
+④ 4번째 실행
+setTimeout(() => {
+    console.log("타임아웃 2");
+}, 0);
+
+② 2번째 실행
+Promise.resolve().then(() => console.log("프로미스 2"));
+```
+<br>
+
+### (1-2) Promise
+* 비동기 작업을 표현하는 자바스크립트 객체   
+
+   * 비동기 작업의 진행, 성공, 실패 상태를 표현한다   
+
+      * ```new Promise()```나 ```fetch()``` 비동기 API를 통해 ```Pending(진행)``` 상태에 접어들게 되고, 성공/실패 상태(```settled```)를 알 수 있다
+
+      * 성공은 ```fullfilled```나 ```resolved```, 실패는 ```rejected```로 표현된다
+
+         * 성공의 경우에는 ```.then()``` 메소드가 실행되고, 실패의 경우에는 ```.catch()``` 메소드가 실행된다
+
+         * ```.then(성공시)``` + ```.catch()``` / ```.then(성공시, 실패시)```   
+
+   * 비동기 처리의 순서를 표현할 수 있다   
+<br>
+<hr>
+
+### (2) Promise 생성자
+* 기본형: __```new Promise(콜백 함수)```__
+
+   * callback 함수는 executor 함수라고 하며, ```(resolve, reject)``` 두 인자를 받는다
+
+__Ex >__
+```
+let promise = new Promise((resolve, reject) => {
+    if (Math.random() < 0.5) {
+        return reject("실패");
+    }
+    resolve(10);
+});
+```
+<br>
+
+### (3-1) Promise 메서드
+* __```.then()```__ 메서드
+
+   * 성공했을 때 실행할 콜백 함수를 인자로 넘긴다
+
+   * ```.then(성공 콜백1, 실패 콜백2)```로 성공/실패 콜백 함수를 함께 인자로 넘길 수 있다
+
+* __```.catch()```__ 메서드
+
+   * 실패했을 때 실행할 콜백 함수를 인자로 넘긴다
+
+* __```.finally```__ 메서드
+
+   * 성공/실패 여부와 상관없이 모두 실행할 콜백 함수를 인자로 넘긴다
+
+__Ex >__
+```
+promise
+    .then(data => {
+        console.log("성공: ", data)
+    })
+    .catch(e => {
+        console.log("실패: ", e)
+    })
+    .finally(() => {
+        console.log("promise 종료")
+    })
+```
+<br>
+
+### (3-2) Promise 메서드 체인
+* ```then/catch``` 메서드가 또 다른 promise를 리턴하여, 비동기 코드에 순서를 부여한다
+
+* 동일한 객체에 메서드를 연결할 수 있는 것을 __체이닝(chaining)__ 이라 한다
+
+* 함수를 호출한 주체가 함수를 끝낸 뒤 자기자신을 리턴하도록 하여 구현한다
+
+__Ex >__
+```
+promise
+    .then(data => {
+        return fetchUser(data)        // fetchUser() 함수가 promise를 리턴하는 함수라면, 이게 끝나야 다음 then이 실행된다
+    })                                   → 비동기 코드의 순서를 부여할 수 있다
+    .then(user => {
+        console.log('User : ', user)
+    })
+    .catch(e => {
+        console.log("실패: ", e)
+    })
+```
+<br>
+<hr>
+
+### (4) Promise 정적 함수
+* __```Promise.resolve```__
+
+   * 성공한 Promise 객체를 바로 반환한다
+
+* __```Promise.reject```__
+
+   * 실패한 Promise 객체를 바로 반환한다
+
+* 인위적으로 Primise 메서드 체인을 만들 수 있다
+
+   * Promise를 리턴하는 함수를 만들어 호출할 필요가 없다
+
+   * 비동기 코드로 진행해야 하는 상황 등에서 유용하게 사용할 수 있다
+
+__Ex >__
+```
+Promise
+    .resolve(10)
+    .then(console.log)
+    
+Promise
+    .reject("Error")
+    .catch(console.log)
+```
+<br>
+
+### (5) Promise.all 메서드
+* 정적인 메서드
+
+* Promise 배열을 받아 모두 성공시 각 Promise의 resolved값을 배열로 반환한다
+
+   * 다 성공할 때까지 or 하나라도 실패할 때까지 기다린다
+
+   * 하나의 Promise라도 실패시, 가장 먼저 실패한 Promise의 실패 이유를 반환한다
+
+__Ex >__
+```
+Promise.all([
+    promise1,
+    promise2,
+    promise3
+])
+    .then(values => {
+        console.log("모두성공: ", values)
+    })
+    .catch(e =>
+        console.log("하나라도 실패: ", e)
+    })
+```
+
+<br>
+<hr>
+
+### 4) 
