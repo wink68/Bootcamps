@@ -11,7 +11,7 @@
    * async로 선언된 함수는 반드시 __Promise를 리턴한다__   
 <br>
 
-### (1) async 함수
+### (1-1) async 함수
 * function 키워드 앞에 async를 붙인다
 
    * async 함수 내부에서 await 키워드를 사용한다
@@ -27,3 +27,7 @@ fetchUser(data)
     return user
 }
 ```
+<br>
+
+### (1-2) await 키워드 실행 순서
+* await 키워드는 then 메서드 체인을 연결한 것처럼 순서대로 
