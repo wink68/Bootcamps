@@ -138,11 +138,11 @@ console.log('Finished')             // 2. Finished 출력
 
    * 비동기 처리를 제공하지 않는다
 
-   * 대신, 비동기 코드는 정해진 함수를 제공하여 활용할 수 있다 → __이 함수들을 API라 한다__   
+   * 대신, 비동기 코드는 정해진 함수를 제공하여 활용할 수 있다 → __이 함수들 = 비동기 API__   
 
 * 비동기 API의 예시
 
-   * ```setTimeout```, ```XMLHttpRequest```, ```fetch``` 등의 Web API가 있다
+   * ```setTimeout```, ```XMLHttpRequest```, ```fetch``` 등의 Web API
 
 * Node.js의 경우 파일처리 API, 암호화 API 등을 제공한다
 
