@@ -179,7 +179,7 @@ fetch('https://google.com')                            // 구글로 요청을 �
 
    * API 모듈은 비동기 요청을 처리한 후, __Taskque__ 에 callback 함수를 넣는다
 
-      * setTimeout()의 경우, Web API 모듈에 등록되었을 때, 특정 시간 후 Task queue에 들어간다
+      * setTimeout()의 경우 : 브라우저의 경우, Web API 모듈에 특정 시간이 지난 후 등록되고, Task queue에 들어간다
 
    * __Job queue__ 는 Promise API나 animation frame에서 사용된다
 <br>
@@ -190,7 +190,7 @@ fetch('https://google.com')                            // 구글로 요청을 �
 
       * node.js 환경의 경우, libuv라는 모듈에서 비동기 처리를 담당한다
 
-   * 비동기 코드가 끝나고 call stack이 다 비워졌을 때, Task queue의 첫번째 callback 함수를 Call stack에 집어넣고 코드를 실행한다
+   * 비동기 코드가 끝나고 call stack이 다 비워졌을 때(모든 코드가 다 실행되었을 때), Task queue의 첫번째 callback 함수를 Call stack에 집어넣고 코드를 실행한다
 
       * Task queue에 callback 함수가 들어온 순서대로 함수를 Call stack으로 내보낸다
 
