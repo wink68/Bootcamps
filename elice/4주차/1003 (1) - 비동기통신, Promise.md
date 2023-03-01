@@ -190,7 +190,9 @@ fetch('https://google.com')                            // 구글로 요청을 �
 
       * node.js 환경의 경우, libuv라는 모듈에서 비동기 처리를 담당한다
 
-   * 비동기 코드가 끝나고 call stack이 다 비워졌을 때(모든 코드가 다 실행되었을 때), Task queue의 첫번째 callback 함수를 Call stack에 집어넣고 코드를 실행한다
+   * 비동기 코드가 끝나고 call stack이 다 비워졌을 때(모든 코드가 다 실행되었을 때), Task queue에 task가 남아있는지 체크한다
+   
+      * Task가 남아있다면, Task queue의 첫번째 callback 함수를 Call stack에 집어넣고 코드를 실행한다
 
       * Task queue에 callback 함수가 들어온 순서대로 함수를 Call stack으로 내보낸다
 
@@ -203,13 +205,13 @@ fetch('https://google.com')                            // 구글로 요청을 �
 <br>
 
 ### (2-1) 비동기 처리 예시
-* console.log를 만난다
+(1) console.log이 실행된다 (Call stack에서)
 
-* request 함수는 userData에 콜백 함수를 받는다
+(2) request 함수는 userData에 콜백 함수를 받는다
 
    * request 함수는 비동기 처리를 끝냈을 때, 콜백 함수를 Task queue에 넣어준다
 
-   * Task queue에서 request가 끝나면 Call stack에 request callback 함수를 넣어주고, console.log가 찍히고 끝난다
+   * Task queue에서 request가 끝나면 Call stack에 request callback 함수를 넣어주고, ```console.log("userData 로드")```가 실행되고 끝난다
 
 __Ex>__
 ```
@@ -221,6 +223,12 @@ request("user-data", (userData) => {
 console.log("DOM 변경")
 console.log("유저 입력")
 ```
+
+<br>
+<hr>
+
+### (3) 퀴즈
+<img src="https://user-images.githubusercontent.com/108077414/222064761-cdc8f85e-48b3-42e6-9a0a-837988e7124c.png" alt="비동기통신 퀴즈" />
 
 <br>
 <hr>
